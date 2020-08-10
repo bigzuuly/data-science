@@ -3,28 +3,28 @@ Created on Nov 29, 2016
 
 @author: ThomasC
 '''
-from __future__ import division
 
 import re
 import random
 from collections import Counter
 from collections import defaultdict
 from functools import partial
+from functools import reduce
 
 
 my_regex = re.compile("[0-9]+", re.I)
 
 
 for i in [1,2,3,4,5]:
-    print i
+    print (i)
     
     for j in [1,2,3,4,5]:
-        print j
-        print i+j
+        print (j)
+        print (i+j)
         
 print ("Done")
 
-print Counter([1,2,3,4,5])
+print (Counter([1,2,3,4,5]))
 
 
 print (5/2)
@@ -60,7 +60,7 @@ list_of_lists = [integer_list, hetero_list, []]
 print (len(integer_list))
 print (sum(integer_list))
 
-x = range(10)
+x = list(range(10))
 
 print(x[1])
 
@@ -88,11 +88,11 @@ def sum_and_product(x,y):
 
 s, p = sum_and_product(5, 10)
 
-print s, p
+print (s, p)
 
 s,p = p, s
 
-print s, p
+print (s, p)
 
 print ("\n\n")
 
@@ -115,7 +115,7 @@ tweet = {
     }
 
 
-print "#data" in tweet["hashtags"]
+print ("#data" in tweet["hashtags"])
 
 print (tweet.values())
 print (tweet.keys())
@@ -128,109 +128,106 @@ dd_pair = defaultdict(lambda: [0,0])
 dd_pair[2][1] = 1
 dd_pair["2"][1] = 1
 
-print dd_pair
+print (dd_pair)
 
 document = "Match 1 game 1, is there any merit to chumping with the goyf instead of 1 of the lingering soul tokens? That leaves you with 3 lethal power in fliers, while also eliminating your opponent's out of playing a chump blocker for your goyf. All their removal is burn based so if they had any you were dead regardless.".split()
 
 document_counter = Counter(document)
 
 for word, c in document_counter.most_common(10):
-    print word, c
+    print (word, c)
 
-s = set();
+s = set()
 s.add(1)
 s.add(2)
 s.add(2)
 
-print s
-print 3 in s
+print (s)
+print (3 in s)
 
 print ("\n\n")
 x = None
-print x is None
+print (x, "is None")
 
 print (all([]))
 print (any([]))
 
-print (sorted(document, key=lambda (word): document_counter.get(word), reverse=True))
+print (sorted(document, key=lambda word: document_counter.get(word), reverse=True))
 
 even_numbers = [x for x in range(10) if x % 2 ==0]
 
-print even_numbers
-print [x*x for x in even_numbers]
+print (even_numbers)
+print (x*x for x in even_numbers)
 
-for i in xrange(10):
+for i in range(10):
     """lazy version"""
-    print i
+    print (i)
     
     
 
-print "\n\n"
+print ("\n\n")
 
 four_uniform_randoms = [random.random() for _ in range(4)]
-print four_uniform_randoms
+print (four_uniform_randoms)
 
 
 
-print random.randrange(3,6)
+print (random.randrange(3,6))
 
 names = ["Alice", "Thomas", "Tim", "Brad", "Cindy"]
 random.shuffle(names)
 
-print names
+print (names)
 
-print random.sample(names, 2)
+print (random.sample(names, 2))
 
 four_with_replacement = [random.choice(names) for _ in range(4)]
-print four_with_replacement
+print (four_with_replacement)
 
 
-print "\n\n"
+print ("\n\n")
 
 def exp(base,power):
     return base ** power
 
 two_to_the_power = partial(exp, 2)
 
-print two_to_the_power(10)
+print (two_to_the_power(10))
 
 square_of = partial(exp, power=2)
-print square_of(3)
+print (square_of(3))
 
-print "\n\n"
-
-def double(x):
-    return 2 * x
+print ("\n\n")
 
 xs = [1,2,3,4]
-print [double(x) for x in xs]
-print map(double, xs)
+print (double(x) for x in xs)
+print (map(double, xs))
 
 def multiply(x,y):
     return x * y
 
-print map(multiply, [1,2], [4,10])
+print (map(multiply, [1,2], [4,10]))
 
 def is_even(x):
     return x % 2 == 0
 
-print [x for x in xs if is_even(x)]
-print filter(is_even, xs)
+print (x for x in xs if is_even(x))
+print (filter(is_even, xs))
 
-print reduce(multiply, xs)
+print (reduce(multiply, xs))
 
 for i,name in enumerate(names):
-    print i, name
+    print (i, name)
     
-print "\n\n"
+print ("\n\n")
 
 list1 = ['a','b','c']
 list2 = [1,2,3]
 
-print zip(list1, list2)
-print zip(*zip(list1, list2)) 
+print (zip(list1, list2))
+print (zip(*zip(list1, list2)))
 
-print "\n\n"
+print ("\n\n")
 
 def doubler(f):
     def g(*args, **kwargs):
@@ -242,14 +239,14 @@ def f1(x):
 
 g = doubler(f1)
 
-print g(3)
-print g(-1)
+print (g(3))
+print (g(-1))
 
 def f2(x,y):
     return x + y
 
 g = doubler(f2)
 
-print g(3,2)
+print (g(3,2))
 
 
