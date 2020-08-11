@@ -3,8 +3,6 @@ Created on Dec 5, 2016
 
 @author: ThomasC
 '''
-from __future__ import division
-
 from matplotlib import pyplot as plt
 
 
@@ -18,7 +16,7 @@ plt.bar(xs, num_oscars)
 plt.ylabel("# of Academy Awards")
 plt.xlabel("My Favorite Movies")
 
-plt.xticks([i + 0.5 for i, _ in enumerate(movies)], movies)
+plt.xticks([i for i, _ in enumerate(movies)], movies)
 
 plt.show()
 

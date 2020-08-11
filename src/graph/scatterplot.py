@@ -3,7 +3,6 @@ Created on Dec 5, 2016
 
 @author: ThomasC
 '''
-from __future__ import division
 
 from matplotlib import pyplot as plt
 from collections import Counter 
