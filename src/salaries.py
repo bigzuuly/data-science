@@ -14,7 +14,7 @@ salaries_and_tenures = [
 salary_by_tenure = defaultdict(list)
 
 for salary, tenure in salaries_and_tenures:
-    salary_by_tenure[tenure].append(salary);
+    salary_by_tenure[tenure].append(salary)
     
 # keys are years, each value are average salary for that tenure
 average_salary_by_tenure = {
@@ -39,7 +39,7 @@ salary_by_tenure_bucket = defaultdict(list)
 
 for salary, tenure in salaries_and_tenures:
     tenure_group = tenure_bucket(tenure)
-    salary_by_tenure_bucket[tenure_group].append(salary);
+    salary_by_tenure_bucket[tenure_group].append(salary)
     
 
 # keys are tenure bucket, each value are average salary for that tenure bucket

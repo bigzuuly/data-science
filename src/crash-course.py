@@ -125,8 +125,10 @@ print ("user" in tweet)
 print ("\n\n")
 
 dd_pair = defaultdict(lambda: [0,0])
+dd_pair[2][0] = 3
 dd_pair[2][1] = 1
-dd_pair["2"][1] = 1
+print ("dd_pair", dd_pair)
+#dd_pair["2"][1] = 1
 
 print (dd_pair)
 
@@ -212,7 +214,7 @@ def is_even(x):
     return x % 2 == 0
 
 print (x for x in xs if is_even(x))
-print (filter(is_even, xs))
+print (*filter(is_even, xs), sep=" ")
 
 print (reduce(multiply, xs))
 
@@ -224,8 +226,8 @@ print ("\n\n")
 list1 = ['a','b','c']
 list2 = [1,2,3]
 
-print (zip(list1, list2))
-print (zip(*zip(list1, list2)))
+print (*zip(list1, list2), sep=" ")
+print (*zip(*zip(list1, list2)), sep=" ")
 
 print ("\n\n")
 
