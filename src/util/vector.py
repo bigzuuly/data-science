@@ -5,6 +5,7 @@ Created on Dec 13, 2016
 '''
 
 import math
+from functools import reduce
 
 def vector_add(v, w):
     return [v_i + w_i for v_i, w_i in zip(v,w)]

@@ -31,7 +31,7 @@ identity_matrix = make_matrix(5, 5, is_diagonal)
 
 def print_matrix(A):
     for row in A:
-        print row
+        print (row)
 
 
 print_matrix(identity_matrix)
