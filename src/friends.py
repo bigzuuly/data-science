@@ -53,7 +53,7 @@ num_friends_by_id = [(user["id"], number_of_friends(user)) for user in users]
 
 [print_user(user) for user in users]
 
-print (num_friends_by_id)
+print ("Number of friends:", num_friends_by_id)
 
 sorted_num_friends = sorted(num_friends_by_id, key= lambda userTuple : userTuple[1], reverse=True)
 
