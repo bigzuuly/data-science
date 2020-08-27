@@ -123,3 +123,4 @@ daily_minutes_good = [x
                       if i != outlier]
 
 print("Correlation without outlier: ", correlation(num_friends_good, daily_minutes_good))
+
