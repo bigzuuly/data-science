@@ -2,9 +2,9 @@ num_friends = [100.0,49,41,40,25,21,21,19,19,18,18,16,15,15,15,15,14,14,13,13,13
 
 from collections import Counter
 import matplotlib.pyplot as plt
+import math
 
-
-from util.vector import sum_of_squares
+from util.linear_algebra import sum_of_squares
 
 friends_counts = Counter(num_friends)
 xs = range(101)
@@ -83,3 +83,13 @@ def variance(x):
   return sum_of_squares(deviations) / (n - 1)
 
 print("Variance: ", variance(num_friends))
+
+def standard_deviation(x):
+  return math.sqrt(variance(x))
+
+print("Standard Deviation: ", standard_deviation(num_friends))
+
+def interquantile_range(x):
+  return quantile(x, 0.75) - quantile(x, 0.25)
+
+print("Interquantile Range: ", interquantile_range(num_friends))
